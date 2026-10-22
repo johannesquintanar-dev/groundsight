@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aviso de privacidad · BP Geofísica</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="section">
+    <div class="wrap narrow">
+      <p><a href="index.html">← Volver al inicio</a></p>
+      <p class="eyebrow">Legal</p>
+      <h1>Aviso de privacidad simplificado</h1>
+      <p class="muted">Última actualización: octubre de 2026. <b>Texto modelo: revisar y ajustar antes de publicar.</b></p>
+
+      <h3>Responsable</h3>
+      <p><span data-site="responsable">Brenda Pamela</span>, bajo el nombre comercial <span data-site="nombre">BP Geofísica</span>, es responsable del tratamiento de los datos personales que nos proporciones. Contacto: <a data-site-mail href="#"></a>.</p>
+
+      <h3>Datos que recabamos</h3>
+      <p>Nombre, empresa, correo electrónico, teléfono y la información del proyecto que compartas en el formulario de cotización.</p>
+
+      <h3>Finalidades</h3>
+      <p>Usamos tus datos únicamente para responder tu solicitud, elaborar y enviarte cotizaciones y dar seguimiento a los servicios contratados. No vendemos ni compartimos tus datos con terceros con fines comerciales.</p>
+
+      <h3>Encargados</h3>
+      <p>El formulario se envía mediante el servicio FormSubmit, que transmite la información a nuestro correo electrónico.</p>
+
+      <h3>Derechos ARCO</h3>
+      <p>Puedes solicitar el acceso, rectificación, cancelación u oposición al tratamiento de tus datos escribiendo al correo indicado arriba, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+    </div>
+  </main>
+  <script src="assets/js/config.js"></script>
+  <script>
+    document.querySelectorAll("[data-site]").forEach((el) => { el.textContent = SITE[el.dataset.site] || el.textContent; });
+    document.querySelectorAll("[data-site-mail]").forEach((el) => { el.href = "mailto:" + SITE.email; el.textContent = SITE.email; });
+  </script>
+</body>
+</html>
