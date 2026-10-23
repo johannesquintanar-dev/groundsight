@@ -25,7 +25,7 @@
   <main id="contenido">
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__media"><img src="assets/img/stock/ov/hero.jpg" alt="" fetchpriority="high"></div>
+      <div class="hero__media"><img src="assets/img/stock/ov/hero.jpg" srcset="assets/img/stock/ov/hero-640.webp 640w, assets/img/stock/ov/hero-1024.webp 1024w, assets/img/stock/ov/hero-1600.webp 1600w, assets/img/stock/ov/hero-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high"></div>
       <div class="wrap hero__content">
         <div>
           <p class="kicker kicker--light" data-hero style="--d:100ms"><span data-site="lema">Porque cada proyecto es una nueva tierra</span></p>
@@ -81,7 +81,7 @@
             <a href="nosotros.html" class="link">Conoce a la especialista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
           <figure class="split__img" data-reveal="right">
-            <img src="assets/img/stock/ov/nosotros.jpg" alt="Instrumento geofísico durante un levantamiento de campo" loading="lazy">
+            <img src="assets/img/stock/ov/nosotros.jpg" data-sizes="(max-width: 860px) 100vw, 50vw" alt="Técnico marcando un punto de medición en campo" loading="lazy">
             <div class="split__badge"><b>24 h</b><span>respuesta a tu solicitud en días hábiles</span></div>
           </figure>
         </div>
@@ -148,13 +148,14 @@
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/servicios.js"></script>
+  <script src="assets/js/imagenes.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     // Tarjetas de categorías y cinta de servicios
     document.getElementById("cats").innerHTML = CATEGORIAS.map((c, i) => `
       <a class="cat" href="servicios.html#${c.id}">
-        <img src="${c.img}" alt="" loading="lazy">
+        <img ${pic(c.img, "(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw")} alt="" loading="lazy">
         <div class="cat__body">
           <span class="cat__num">0${i + 1} · ${c.corto}</span>
           <h3>${c.nombre}</h3>

@@ -10,6 +10,23 @@
     { href: "nosotros.html", label: "Nosotros", id: "nosotros" },
     { href: "preguntas.html", label: "Preguntas", id: "preguntas" }
   ];
+  // srcset responsivo: devuelve los atributos para una foto según los anchos WebP disponibles
+  // (manifiesto en imagenes.js). El JPG original queda como respaldo en src.
+  window.pic = (src, sizes = "100vw") => {
+    const ws = (window.IMG || {})[src];
+    if (!ws) return `src="${src}"`;
+    const set = ws.map((w) => `${src.replace(/\.jpg$/, "")}-${w}.webp ${w}w`).join(", ");
+    return `src="${src}" srcset="${set}" sizes="${sizes}"`;
+  };
+  // Fotos escritas a mano en el HTML: <img src="x.jpg" data-sizes="50vw">
+  document.querySelectorAll("img[data-sizes]").forEach((img) => {
+    const ws = (window.IMG || {})[img.getAttribute("src")];
+    if (!ws) return;
+    const base = img.getAttribute("src").replace(/\.jpg$/, "");
+    img.sizes = img.dataset.sizes;
+    img.srcset = ws.map((w) => `${base}-${w}.webp ${w}w`).join(", ");
+  });
+
   const current = document.body.dataset.page || "";
   const light = document.body.dataset.nav === "light";
   const waMsg = "Hola, me interesa cotizar un estudio geofísico.";

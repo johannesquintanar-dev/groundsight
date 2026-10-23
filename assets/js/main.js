@@ -68,7 +68,7 @@
   if (sectors) {
     sectors.innerHTML = window.SECTORES.map((s) => `
       <article class="sector">
-        <img class="sector__img" src="${s.img}" alt="" loading="lazy">
+        <img class="sector__img" ${pic(s.img, "(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw")} alt="" loading="lazy">
         <h3>${s.nombre}</h3>
         <p>${s.desc}</p>
         <div class="sector__tags">${s.tags.map((t) => `<span>${t}</span>`).join("")}</div>
@@ -104,7 +104,7 @@
               <p class="lead">${c.resumen}</p>
               <div class="catblock__for">${c.para.map((p) => `<span>${p}</span>`).join("")}</div>
             </div>
-            <figure data-reveal="right"><img src="${c.img}" alt="${c.nombre}: trabajo de campo" loading="lazy"></figure>
+            <figure data-reveal="right"><img ${pic(c.img, "(max-width: 860px) 100vw, 50vw")} alt="${c.nombre}: trabajo de campo" loading="lazy"></figure>
           </div>
           <div class="grid services stagger">${list.map(svcCard).join("")}</div>
         </div>

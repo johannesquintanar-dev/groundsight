@@ -28,6 +28,7 @@
   </main>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/servicios.js"></script>
+  <script src="assets/js/imagenes.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
@@ -40,7 +41,7 @@
       const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
       document.getElementById("creds").innerHTML = items.length ? items.map((c) => `
         <article class="cred">
-          <img src="${c.dir}${esc(c.archivo)}" alt="" loading="lazy">
+          <img ${pic(c.dir + c.archivo, "(max-width: 600px) 100vw, 300px")} alt="" loading="lazy">
           <div>
             <b>${esc(c.titulo)}</b>
             <span>${esc(c.autor)} · <a href="${esc(c.licencia_url)}" target="_blank" rel="noopener">${esc(c.licencia)}</a></span><br>
