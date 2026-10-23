@@ -20,7 +20,7 @@
 
 - [x] **Nombre comercial:** NUSCAA-Geoservicios (empresa ya existente). Lema: "Porque cada proyecto es una nueva tierra".
 - [ ] **Logotipo** (si no hay, se usa logotipo tipográfico).
-- [x] **Correo de contacto:** buscas.geoservicios@gmail.com.
+- [x] **Correo de contacto:** nuscaa.geoservicios@gmail.com.
 - [x] **WhatsApp:** 564 902 1932.
 - [ ] **Zona de cobertura** (estados / regiones donde trabaja).
 - [ ] Breve **semblanza profesional**: formación, cédula profesional, años de experiencia, equipos que maneja.

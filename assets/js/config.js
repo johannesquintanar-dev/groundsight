@@ -8,7 +8,7 @@ window.SITE = {
   nombre: "NUSCAA-Geoservicios",
   lema: "Porque cada proyecto es una nueva tierra",
   responsable: "Brenda Pamela",
-  email: "buscas.geoservicios@gmail.com",
+  email: "nuscaa.geoservicios@gmail.com",
   whatsapp: "525649021932",               // 52 + número a 10 dígitos, sin espacios
   telefonoVisible: "564 902 1932",        // como se muestra en pantalla
   cobertura: "Toda la República Mexicana",
