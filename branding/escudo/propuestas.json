@@ -1,37 +1,37 @@
 [
   {
-    "id": "01-fiel",
-    "nombre": "Fiel",
-    "v": "fiel",
-    "idea": "Conserva la idea original tal cual: arco del cielo, traza sísmica sobre el terreno, tres estratos y la falla que los atraviesa. Se limpian las curvas, se igualan los grosores y se pasa a la paleta marino, arena y naranja. La traza y la falla son un solo trazo continuo: la onda baja y se convierte en la grieta.",
-    "uso": "Transición suave desde el logo actual."
+    "id": "01-original",
+    "nombre": "Original fiel",
+    "v": "original",
+    "idea": "Reproduce el logotipo actual tal cual: arco del cielo, onda sísmica con su pico central, tres estratos y la falla que nace exactamente del fondo del pico central de la onda, como en el original. Solo cambian los colores a la paleta (marino, arena, naranja) y se limpian los trazos.",
+    "uso": "Continuidad total con la imagen que ya conocen los clientes."
   },
   {
-    "id": "02-solido",
-    "nombre": "Sólido",
-    "v": "solido",
-    "idea": "El escudo completo en marino con los estratos arena y naranja como franjas; la traza y la grieta quedan en claro. Una sola forma, muy fuerte en tamaños pequeños y en bordado.",
-    "uso": "Favicon, uniformes, sellos."
+    "id": "02-capas",
+    "nombre": "Capas",
+    "v": "capas",
+    "idea": "Marca corporativa sin contenedor: la onda sísmica sobre tres estratos que se estrechan hacia abajo, como una sección del terreno. Minimalista, equilibrada y muy fácil de reproducir en cualquier tamaño o material.",
+    "uso": "Papelería, sitio web, presentaciones a empresas."
   },
   {
-    "id": "03-lineal",
-    "nombre": "Lineal",
-    "v": "lineal",
-    "idea": "Versión de un solo trazo: contorno del escudo, tres horizontes en arco y la traza con su falla en naranja. Elegante en membretes e informes; funciona en una sola tinta.",
-    "uso": "Informes, planos, grabado."
+    "id": "03-pulso",
+    "nombre": "Pulso",
+    "v": "pulso",
+    "idea": "Un anillo (el planeta, la precisión del instrumento) atravesado por un único pulso naranja. Lenguaje de empresa tecnológica: dos elementos, un color de acento, lectura inmediata.",
+    "uso": "App, redes sociales, favicon."
   },
   {
-    "id": "04-rombo",
-    "nombre": "Rombo",
-    "v": "rombo",
-    "idea": "La misma lectura (superficie, estratos, falla) en una silueta de diamante: alude a la exploración minera y al rigor geométrico. Estratos rectos y contorno fino; la traza continúa como falla en un solo trazo.",
-    "uso": "Minería, presentaciones."
+    "id": "04-bloque",
+    "nombre": "Bloque",
+    "v": "bloque",
+    "idea": "Un cuadro redondeado dividido en diagonal: superficie en marino y subsuelo en naranja, con la onda recorriendo la frontera. Contundente, tipo marca de ingeniería o fintech, con mucha presencia en pequeño.",
+    "uso": "Favicon, icono de app, sello en informes."
   },
   {
-    "id": "05-insignia",
-    "nombre": "Insignia",
-    "v": "insignia",
-    "idea": "Un círculo como sección del planeta: horizonte, traza sísmica en la parte alta y estratos abajo, con anillo naranja. Muy cómodo para redes sociales y perfiles.",
-    "uso": "Redes, WhatsApp Business, Google."
+    "id": "05-signo",
+    "nombre": "Signo N",
+    "v": "signo",
+    "idea": "Monograma de NUSCAA: dos pilares marino y la onda sísmica en naranja como diagonal de la N. Sin contenedor, lo que lo hace moderno y flexible; funciona como marca de agua y como símbolo independiente.",
+    "uso": "Marca de agua, planos, bordado, redes."
   }
 ]
