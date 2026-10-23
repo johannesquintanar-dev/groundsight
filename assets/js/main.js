@@ -226,7 +226,11 @@
       form.reset();
       setMsg("¡Gracias! Recibimos tu solicitud y te contactaremos pronto.", "ok");
     } catch (err) {
-      setMsg("No se pudo enviar en este momento. Intenta con el botón de WhatsApp o escríbenos por correo.", "err");
+      // FormSubmit responde así hasta que se confirma el correo de activación (una sola vez)
+      const pendiente = /activat/i.test(String(err.message));
+      setMsg(pendiente
+        ? "El formulario está en proceso de activación. Por favor envíanos tu solicitud con el botón de WhatsApp."
+        : "No se pudo enviar en este momento. Intenta con el botón de WhatsApp o escríbenos por correo.", "err");
     } finally {
       btn.disabled = false;
     }
