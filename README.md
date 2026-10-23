@@ -34,6 +34,8 @@ assets/img/stock/ov/         Fotografías de Flickr vía Openverse (+ creditos-o
 1. Abre `assets/js/config.js` y cambia `email`, `whatsapp` y `telefonoVisible`.
 2. Sube el cambio. La primera vez que alguien envíe el formulario, **FormSubmit** mandará un
    correo de activación a ese Gmail: hay que abrirlo y pulsar *Activate* (una sola vez).
+   **Ya está activado** para nuscaa.geoservicios@gmail.com (octubre de 2026); si se cambia el
+   correo, habrá que activarlo de nuevo.
 
 ## Editar servicios
 
