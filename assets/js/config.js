@@ -8,11 +8,11 @@ window.SITE = {
   nombre: "NUSCAA-Geoservicios",
   lema: "Porque cada proyecto es una nueva tierra",
   responsable: "Brenda Pamela",
-  email: "cotizaciones@ejemplo.com",      // TODO: poner el Gmail de Brenda
-  whatsapp: "520000000000",               // TODO: 52 + lada + número, sin espacios
-  telefonoVisible: "+52 (000) 000 0000",  // TODO: como se mostrará en pantalla
+  email: "buscas.geoservicios@gmail.com",
+  whatsapp: "525649021932",               // 52 + número a 10 dígitos, sin espacios
+  telefonoVisible: "564 902 1932",        // como se muestra en pantalla
   cobertura: "Toda la República Mexicana",
-  linkedin: "",                           // opcional
-  facebook: "",                           // opcional
-  instagram: ""                           // opcional
+  instagram: "https://www.instagram.com/NUSCAA_Geoservicios",
+  facebook: "",                           // pendiente: pegar la URL cuando exista
+  linkedin: ""                            // pendiente: pegar la URL cuando exista
 };

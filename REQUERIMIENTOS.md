@@ -20,15 +20,15 @@
 
 - [x] **Nombre comercial:** NUSCAA-Geoservicios (empresa ya existente). Lema: "Porque cada proyecto es una nueva tierra".
 - [ ] **Logotipo** (si no hay, se usa logotipo tipográfico).
-- [ ] **Correo de contacto** (Gmail) donde llegarán las cotizaciones.
-- [ ] **Número de WhatsApp** (con lada, formato 52XXXXXXXXXX).
+- [x] **Correo de contacto:** buscas.geoservicios@gmail.com.
+- [x] **WhatsApp:** 564 902 1932.
 - [ ] **Zona de cobertura** (estados / regiones donde trabaja).
 - [ ] Breve **semblanza profesional**: formación, cédula profesional, años de experiencia, equipos que maneja.
 - [ ] Equipos propios o en renta (marca/modelo) — da mucha credibilidad.
 - [ ] **Foto profesional de Brenda** para "Sobre nosotros" (la actual es una imagen ilustrativa generada con IA, no es ella).
 - [ ] **Fotos reales** de campo (aunque sean de proyectos anteriores como empleada, sin datos de clientes).
 - [ ] Ejemplos de resultados (perfiles de TRE, curvas de MASW, etc.) **anonimizados** para el portafolio.
-- [ ] Redes sociales (LinkedIn, Facebook, Instagram) si existen.
+- [x] Instagram: @NUSCAA_Geoservicios. [ ] Facebook y LinkedIn pendientes.
 - [ ] Dominio deseado (ej. `bpgeofisica.com.mx`).
 
 ## 3. Requerimientos funcionales

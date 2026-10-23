@@ -326,6 +326,10 @@ fieldset.is-invalid legend { color: #c0392b; }
 .footer a { text-decoration: none; transition: color .2s; }
 .footer a:hover { color: #fff; }
 .footer .logo { color: #fff; margin-bottom: 14px; }
+.footer__social { display: flex; gap: 10px; margin-top: 18px; }
+.footer__social a { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: rgba(255,255,255,.08); color: #fff; transition: background .2s, transform .25s var(--ease); }
+.footer__social a:hover { background: var(--accent); transform: translateY(-2px); }
+.footer__social svg { width: 20px; height: 20px; }
 .footer__motto { font: 500 1.05rem var(--head); color: #f4a981; font-style: italic; margin-bottom: 10px; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: .8rem; }
 
