@@ -8,7 +8,7 @@ window.IMG = {
  "assets/img/stock/geoelectricos.jpg": [
   640,
   1024,
-  1536
+  1600
  ],
  "assets/img/stock/gpr-concreto.jpg": [
   640,

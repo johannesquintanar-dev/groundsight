@@ -54,7 +54,7 @@
   header.id = "nav";
   header.innerHTML = `
     <div class="nav__inner">
-      <a href="index.html" class="logo" aria-label="${SITE.nombre}, inicio">${LOGO}<span><span class="logo__name"><b>NUSCAA</b>-Geoservicios</span><small>Estudios del subsuelo</small></span></a>
+      <a href="index.html" class="logo" aria-label="${SITE.nombre}, inicio"><span class="logo__full">${window.LOGO_FULL}</span><span class="logo__compact">${window.LOGO_COMPACT}</span></a>
       <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <nav id="menu" class="nav__menu">
         ${PAGES.map((p) => `<a href="${p.href}"${p.id === current ? ' class="is-active" aria-current="page"' : ""}>${p.label}</a>`).join("")}
@@ -69,7 +69,7 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <a href="index.html" class="logo">${LOGO}<span><span class="logo__name"><b>NUSCAA</b>-Geoservicios</span></span></a>
+          <a href="index.html" class="logo" aria-label="${SITE.nombre}, inicio"><span class="logo__full">${window.LOGO_FULL.replace(/lgA/g, "lgF")}</span></a>
           <p class="footer__motto">“${SITE.lema}”</p>
           <p>Exploración geofísica para geotecnia, agua subterránea, minería e infraestructura. Atención directa con la especialista.</p>
         </div>

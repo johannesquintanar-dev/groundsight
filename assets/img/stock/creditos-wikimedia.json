@@ -119,10 +119,10 @@
   {
     "clave": "geoelectricos",
     "archivo": "geoelectricos.jpg",
-    "titulo": "Badania metodą ERT (recorte)",
-    "autor": "Glab310",
-    "licencia": "CC BY 4.0",
-    "licencia_url": "https://creativecommons.org/licenses/by/4.0/",
-    "fuente": "https://commons.wikimedia.org/wiki/File:Badania_metod%C4%85_ERT.jpg"
+    "titulo": "Electrical resistivity tomography profile (recorte)",
+    "autor": "Ekrem Canli",
+    "licencia": "CC BY-SA 3.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "fuente": "https://commons.wikimedia.org/wiki/File:Electrical_resistivity_tomography_profile.jpg"
   }
 ]
