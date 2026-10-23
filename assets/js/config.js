@@ -5,7 +5,7 @@
  * activación a esta dirección: hay que abrirlo y confirmar una sola vez.
  */
 window.SITE = {
-  nombre: "NUSCAA-Geoservicios",
+  nombre: "Groundsight Geoservicios",
   lema: "Porque cada proyecto es una nueva tierra",
   responsable: "Brenda Pamela",
   email: "nuscaa.geoservicios@gmail.com",

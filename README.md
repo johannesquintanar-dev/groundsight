@@ -1,4 +1,4 @@
-# NUSCAA-Geoservicios — sitio web
+# Groundsight Geoservicios — sitio web
 
 Sitio estático (HTML + CSS + JS, sin dependencias ni proceso de build) para la empresa de
 estudios geofísicos de Brenda Pamela. Se publica gratis con GitHub Pages.

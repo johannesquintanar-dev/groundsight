@@ -1,4 +1,4 @@
-# Requerimientos del sitio web — NUSCAA-Geoservicios (Brenda Pamela)
+# Requerimientos del sitio web — Groundsight Geoservicios (Brenda Pamela)
 
 > Contexto: empresa de estudios geofísicos que **está iniciando**. Sin oficinas físicas ni
 > colaboradores fijos; la propia geofísica atiende, cotiza y ejecuta. Volumen bajo de
@@ -18,7 +18,7 @@
 
 ## 2. Información que Brenda debe entregar (pendiente)
 
-- [x] **Nombre comercial:** NUSCAA-Geoservicios (empresa ya existente). Lema: "Porque cada proyecto es una nueva tierra".
+- [x] **Nombre comercial:** Groundsight Geoservicios (autorizado el 23 oct 2026; antes NUSCAA-Geoservicios, descartado porque ya existe NUSCAA DIGITAL en la clase 42 del IMPI). Lema: "Porque cada proyecto es una nueva tierra".
 - [ ] **Logotipo** (si no hay, se usa logotipo tipográfico).
 - [x] **Correo de contacto:** nuscaa.geoservicios@gmail.com.
 - [x] **WhatsApp:** 564 902 1932.
