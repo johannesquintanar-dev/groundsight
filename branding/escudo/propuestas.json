@@ -1,37 +1,79 @@
 [
   {
-    "id": "01-original",
-    "nombre": "Original fiel",
-    "v": "original",
-    "idea": "Reproduce el logotipo actual tal cual: arco del cielo, onda sísmica con su pico central, tres estratos y la falla que nace exactamente del fondo del pico central de la onda, como en el original. Solo cambian los colores a la paleta (marino, arena, naranja) y se limpian los trazos.",
-    "uso": "Continuidad total con la imagen que ya conocen los clientes."
+    "id": "01-fiel",
+    "nombre": "Fiel",
+    "v": "fiel",
+    "idea": "El logotipo actual con la paleta de la marca: arco, onda con pico central, tres estratos y la grieta que nace del fondo del pico. Trazos limpios, proporciones iguales.",
+    "uso": "Continuidad con la imagen conocida."
   },
   {
-    "id": "02-capas",
-    "nombre": "Capas",
-    "v": "capas",
-    "idea": "Marca corporativa sin contenedor: la onda sísmica sobre tres estratos que se estrechan hacia abajo, como una sección del terreno. Minimalista, equilibrada y muy fácil de reproducir en cualquier tamaño o material.",
-    "uso": "Papelería, sitio web, presentaciones a empresas."
+    "id": "02-sin-arco",
+    "nombre": "Sin arco",
+    "v": "sinarco",
+    "idea": "Igual que la fiel pero sin el arco superior: el contorno del escudo hace de horizonte y el conjunto queda más compacto y limpio.",
+    "uso": "Tamaños pequeños, favicon."
   },
   {
-    "id": "03-pulso",
-    "nombre": "Pulso",
-    "v": "pulso",
-    "idea": "Un anillo (el planeta, la precisión del instrumento) atravesado por un único pulso naranja. Lenguaje de empresa tecnológica: dos elementos, un color de acento, lectura inmediata.",
-    "uso": "App, redes sociales, favicon."
+    "id": "03-solido",
+    "nombre": "Sólido",
+    "v": "solido",
+    "idea": "El escudo relleno en marino; los estratos en arena y naranja; onda y grieta en claro, en una sola línea continua. Una forma contundente.",
+    "uso": "Bordado, uniformes, sellos."
   },
   {
-    "id": "04-bloque",
-    "nombre": "Bloque",
-    "v": "bloque",
-    "idea": "Un cuadro redondeado dividido en diagonal: superficie en marino y subsuelo en naranja, con la onda recorriendo la frontera. Contundente, tipo marca de ingeniería o fintech, con mucha presencia en pequeño.",
-    "uso": "Favicon, icono de app, sello en informes."
+    "id": "04-lineal",
+    "nombre": "Lineal",
+    "v": "lineal",
+    "idea": "Solo contornos: escudo, tres horizontes y la onda con la grieta en naranja. Elegante en informes y planos; funciona en una tinta.",
+    "uso": "Informes, grabado, una tinta."
   },
   {
-    "id": "05-signo",
-    "nombre": "Signo N",
-    "v": "signo",
-    "idea": "Monograma de NUSCAA: dos pilares marino y la onda sísmica en naranja como diagonal de la N. Sin contenedor, lo que lo hace moderno y flexible; funciona como marca de agua y como símbolo independiente.",
-    "uso": "Marca de agua, planos, bordado, redes."
+    "id": "05-suave",
+    "nombre": "Suave",
+    "v": "suave",
+    "idea": "La composición original con las esquinas del escudo redondeadas y un arco más grueso: más amable y más actual, sin perder la lectura.",
+    "uso": "Sitio web, redes."
+  },
+  {
+    "id": "06-cuatro-estratos",
+    "nombre": "Cuatro estratos",
+    "v": "cuatro",
+    "idea": "Un estrato más (arena, durazno, naranja, marino) para dar la sensación de profundidad creciente, como una columna geológica.",
+    "uso": "Presentaciones, informes técnicos."
+  },
+  {
+    "id": "07-anillo",
+    "nombre": "Anillo",
+    "v": "anillo",
+    "idea": "El escudo original dentro de un anillo fino, como una insignia: el planeta que rodea a la sección del terreno. Muy cómodo en perfiles circulares de redes.",
+    "uso": "Redes sociales, sello, parche bordado."
+  },
+  {
+    "id": "08-monocromo",
+    "nombre": "Monocromo",
+    "v": "mono",
+    "idea": "Todo en marino con onda, grieta y estratos como líneas claras: la versión de un solo color para sellos, grabado láser y marcas de agua.",
+    "uso": "Sello, grabado, marca de agua."
+  },
+  {
+    "id": "09-calido",
+    "nombre": "Cálido",
+    "v": "calido",
+    "idea": "El naranja como protagonista: escudo y arco en naranja, estratos en durazno y arena, onda y grieta en marino. Más energía, pensado para redes.",
+    "uso": "Redes sociales, promoción."
+  },
+  {
+    "id": "10-gota",
+    "nombre": "Gota",
+    "v": "gota",
+    "idea": "La silueta se vuelve gota invertida, como un marcador de ubicación: “cada proyecto es una nueva tierra”. Conserva onda, estratos y grieta central.",
+    "uso": "Mapas, vehículos, redes."
+  },
+  {
+    "id": "11-heraldico",
+    "nombre": "Heráldico",
+    "v": "heraldico",
+    "idea": "Escudo de borde superior recto y lados angulados, con estratos planos: lectura de institución técnica seria. Onda y grieta idénticas al original.",
+    "uso": "Licitaciones, documentos oficiales."
   }
 ]
