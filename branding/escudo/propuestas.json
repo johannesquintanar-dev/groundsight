@@ -75,5 +75,40 @@
     "v": "heraldico",
     "idea": "Escudo de borde superior recto y lados angulados, con estratos planos: lectura de institución técnica seria. Onda y grieta idénticas al original.",
     "uso": "Licitaciones, documentos oficiales."
+  },
+  {
+    "id": "12-redondo",
+    "nombre": "Redondo",
+    "v": "redondo",
+    "idea": "La composición fiel con el triángulo de esquinas muy redondeadas y punta suave; el arco, más grueso, acompaña la curva. Más amable, menos agresivo.",
+    "uso": "Sitio web, redes, tarjetas."
+  },
+  {
+    "id": "13-sector",
+    "nombre": "Sector",
+    "v": "sector",
+    "idea": "El escudo como sector de círculo: la punta es el centro y el borde superior es un arco perfecto, como el abanico de un barrido geofísico.",
+    "uso": "Favicon, icono de app."
+  },
+  {
+    "id": "14-medallon",
+    "nombre": "Medallón",
+    "v": "medallon",
+    "idea": "Parte superior semicircular y lados curvos hasta la punta, como una medalla o placa: redondo arriba, sólido abajo.",
+    "uso": "Sellos, placas, bordado."
+  },
+  {
+    "id": "15-petalo",
+    "nombre": "Pétalo",
+    "v": "petalo",
+    "idea": "Lados convexos que abombán el triángulo hasta una forma de pétalo o punta de flecha redondeada, con el arco original encima.",
+    "uso": "Papelería, presentaciones."
+  },
+  {
+    "id": "16-circulo",
+    "nombre": "Círculo",
+    "v": "circulo",
+    "idea": "La versión más redonda: la sección del terreno dentro de un círculo completo con la onda cruzándolo. Sin triángulo, misma lectura.",
+    "uso": "Perfiles de redes, monedas, botones."
   }
 ]
