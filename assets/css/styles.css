@@ -89,7 +89,7 @@ p { margin: 0 0 1em; }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; width: min(1200px, 100% - 40px); margin-inline: auto; }
 .logo { display: inline-flex; align-items: center; text-decoration: none; line-height: 0; }
 .logo__compact { display: none; }
-.logo svg { height: 40px; width: auto; display: block; }
+.logo svg { height: 32px; width: auto; display: block; }
 .logo b { color: var(--accent); font-weight: 800; }
 .logo small { display: block; font: 500 .66rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase; opacity: .65; margin-top: 4px; }
 .nav__menu { display: flex; align-items: center; gap: 4px; }
@@ -395,7 +395,7 @@ fieldset.is-invalid legend { color: #c0392b; }
   .logo__full { display: none; }
   .logo__compact { display: block; }
 
-  .logo svg { height: 28px; }
+  .logo svg { height: 24px; }
   .cat { min-height: 300px; }
   .marquee__track { animation-duration: 30s; }
 }
