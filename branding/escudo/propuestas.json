@@ -1,0 +1,37 @@
+[
+  {
+    "id": "01-fiel",
+    "nombre": "Fiel",
+    "v": "fiel",
+    "idea": "Conserva la idea original tal cual: arco del cielo, traza sísmica sobre el terreno, tres estratos y la falla que los atraviesa. Se limpian las curvas, se igualan los grosores y se pasa a la paleta marino, arena y naranja. La traza y la falla son un solo trazo continuo: la onda baja y se convierte en la grieta.",
+    "uso": "Transición suave desde el logo actual."
+  },
+  {
+    "id": "02-solido",
+    "nombre": "Sólido",
+    "v": "solido",
+    "idea": "El escudo completo en marino con los estratos arena y naranja como franjas; la traza y la grieta quedan en claro. Una sola forma, muy fuerte en tamaños pequeños y en bordado.",
+    "uso": "Favicon, uniformes, sellos."
+  },
+  {
+    "id": "03-lineal",
+    "nombre": "Lineal",
+    "v": "lineal",
+    "idea": "Versión de un solo trazo: contorno del escudo, tres horizontes en arco y la traza con su falla en naranja. Elegante en membretes e informes; funciona en una sola tinta.",
+    "uso": "Informes, planos, grabado."
+  },
+  {
+    "id": "04-rombo",
+    "nombre": "Rombo",
+    "v": "rombo",
+    "idea": "La misma lectura (superficie, estratos, falla) en una silueta de diamante: alude a la exploración minera y al rigor geométrico. Estratos rectos y contorno fino; la traza continúa como falla en un solo trazo.",
+    "uso": "Minería, presentaciones."
+  },
+  {
+    "id": "05-insignia",
+    "nombre": "Insignia",
+    "v": "insignia",
+    "idea": "Un círculo como sección del planeta: horizonte, traza sísmica en la parte alta y estratos abajo, con anillo naranja. Muy cómodo para redes sociales y perfiles.",
+    "uso": "Redes, WhatsApp Business, Google."
+  }
+]
