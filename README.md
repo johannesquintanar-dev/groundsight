@@ -1,20 +1,32 @@
-# BP Geofísica — sitio web
+# NUSCAA-Geoservicios — sitio web
 
-Sitio estático (HTML + CSS + JS, sin dependencias) para la empresa de estudios geofísicos de
-Brenda Pamela. Se publica gratis con GitHub Pages.
+Sitio estático (HTML + CSS + JS, sin dependencias ni proceso de build) para la empresa de
+estudios geofísicos de Brenda Pamela. Se publica gratis con GitHub Pages.
 
 Ver **[REQUERIMIENTOS.md](REQUERIMIENTOS.md)** para el alcance, la información pendiente y la fase 2.
+
+## Páginas
+
+| Archivo | Contenido |
+|---------|-----------|
+| `index.html` | Inicio: hero, 5 métodos, por qué nosotros, cifras, sectores, proceso, llamada a cotizar |
+| `servicios.html` | Los 18 estudios agrupados en 5 categorías, con profundidad, aplicaciones y entregable |
+| `nosotros.html` | La especialista, principios de trabajo, cobertura y equipo |
+| `preguntas.html` | Preguntas frecuentes agrupadas por tema |
+| `cotizar.html` | Formulario de cotización (Gmail vía FormSubmit) y envío por WhatsApp |
+| `aviso-privacidad.html` | Aviso de privacidad (texto modelo) |
+| `creditos.html` | Créditos de las fotografías de bancos de imágenes |
 
 ## Estructura
 
 ```
-index.html               Página principal (una sola página con secciones)
-aviso-privacidad.html    Aviso de privacidad (texto modelo)
-assets/css/styles.css    Estilos
-assets/js/config.js      ← Correo, WhatsApp, nombre y cobertura (editar aquí)
-assets/js/servicios.js   ← Catálogo de estudios y categorías (editar aquí)
-assets/js/main.js        Lógica: pestañas, formulario, WhatsApp
-assets/img/              Imágenes (generadas con IA, provisionales)
+assets/css/styles.css        Sistema de estilos y animaciones
+assets/js/config.js          ← Correo, WhatsApp, nombre y cobertura (editar aquí)
+assets/js/servicios.js       ← Catálogo de estudios, categorías y sectores (editar aquí)
+assets/js/layout.js          Encabezado, pie de página y botón de WhatsApp compartidos
+assets/js/main.js            Animaciones, navegación, render de servicios y formulario
+assets/img/stock/            Fotografías de Wikimedia Commons (+ creditos-wikimedia.json)
+assets/img/stock/ov/         Fotografías de Flickr vía Openverse (+ creditos-openverse.json)
 ```
 
 ## Cómo poner los datos reales
@@ -23,15 +35,20 @@ assets/img/              Imágenes (generadas con IA, provisionales)
 2. Sube el cambio. La primera vez que alguien envíe el formulario, **FormSubmit** mandará un
    correo de activación a ese Gmail: hay que abrirlo y pulsar *Activate* (una sola vez).
 
-## Ver en local
+## Editar servicios
 
-Abre `index.html` en el navegador, o:
+Todo el catálogo vive en `assets/js/servicios.js`. Cada estudio tiene `sigla`, `nombre`,
+`prof` (profundidad típica), `desc`, `usos`, `entrega` y la categoría `cat`. Las páginas de
+inicio, servicios y el formulario se generan solos a partir de esa lista.
+
+## Fotografías
+
+Son fotos reales de trabajo geofísico con licencia libre (CC BY / CC BY-SA / dominio público).
+Los créditos se muestran en `creditos.html` y se leen de los archivos JSON de cada carpeta.
+Al sustituirlas por fotos propias, conserva el nombre del archivo y borra su entrada del JSON.
+
+## Ver en local
 
 ```bash
 npx serve .
 ```
-
-## Imágenes
-
-Las fotos son ilustrativas, generadas con IA (Pollinations). Conviene reemplazarlas por fotos
-reales de campo en cuanto existan, conservando los mismos nombres de archivo.

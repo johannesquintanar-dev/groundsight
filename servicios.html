@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios · NUSCAA-Geoservicios</title>
+  <meta name="description" content="18 estudios geofísicos en 5 métodos: TRE, SEV, IP, MASW, TRS, HVSR, Vs30, SPAC, Down-Hole, Cross-Hole, sonda suspendida, batimetría, GPR, TEM, pachómetro, magnetometría y gravimetría.">
+  <meta name="theme-color" content="#071a21">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="servicios">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <main id="contenido">
+    <section class="page-hero">
+      <div class="page-hero__media"><img src="assets/img/stock/tre.jpg" alt=""></div>
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Ruta"><a href="index.html">Inicio</a><span>/</span><span>Servicios</span></nav>
+        <p class="kicker kicker--light" data-hero style="--d:80ms">Servicios</p>
+        <h1 data-hero style="--d:180ms">18 estudios, 5 métodos, una sola pregunta: ¿qué hay debajo?</h1>
+        <p class="lead" data-hero style="--d:300ms">Cada tarjeta explica en qué consiste el estudio, hasta qué profundidad llega, para qué se usa y qué recibes al final. Si no sabes cuál necesitas, <a href="cotizar.html" style="color:#f4a981">cuéntanos tu proyecto</a> y te recomendamos el más eficiente.</p>
+      </div>
+    </section>
+
+    <div class="subnav">
+      <div class="wrap subnav__inner" id="subnav"></div>
+    </div>
+
+    <div id="catblocks"></div>
+
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <p class="kicker kicker--light">Lo que recibes</p>
+          <h2>Un informe hecho para tomar decisiones</h2>
+        </div>
+        <div class="grid deliver stagger">
+          <div class="deliver__item"><span class="n">01</span><b>Objetivo y metodología</b><p>Qué se buscaba, qué método se usó, con qué equipo y bajo qué configuración.</p></div>
+          <div class="deliver__item"><span class="n">02</span><b>Georreferenciación</b><p>Ubicación precisa de líneas, estaciones o puntos de adquisición sobre plano o imagen satelital.</p></div>
+          <div class="deliver__item"><span class="n">03</span><b>Modelos geofísicos</b><p>Secciones, perfiles o mapas procesados con escalas claras y control de calidad.</p></div>
+          <div class="deliver__item"><span class="n">04</span><b>Caracterización geológica</b><p>Interpretación de los modelos en términos de suelos, roca, agua y estructuras.</p></div>
+          <div class="deliver__item"><span class="n">05</span><b>Conclusiones y recomendaciones</b><p>Respuesta directa a la pregunta del proyecto y siguientes pasos sugeridos.</p></div>
+          <div class="deliver__item"><span class="n">06</span><b>Evidencia fotográfica</b><p>Registro del trabajo de campo, el equipo y las condiciones del sitio.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta" data-reveal="scale">
+          <div>
+            <h2>¿No sabes qué estudio necesitas?</h2>
+            <p>Es lo más común. Cuéntanos el objetivo, la profundidad que te interesa y la problemática, y te proponemos la solución más eficiente.</p>
+          </div>
+          <div class="cta__actions">
+            <a href="cotizar.html" class="btn btn--accent">Pedir orientación</a>
+            <a href="preguntas.html" class="btn btn--ghost">Ver preguntas frecuentes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/servicios.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script>
+    document.getElementById("subnav").innerHTML = CATEGORIAS.map((c) => `<a href="#${c.id}">${c.nombre}</a>`).join("");
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

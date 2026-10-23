@@ -1,4 +1,4 @@
-# Requerimientos del sitio web — BP Geofísica (Brenda Pamela)
+# Requerimientos del sitio web — NUSCAA-Geoservicios (Brenda Pamela)
 
 > Contexto: empresa de estudios geofísicos que **está iniciando**. Sin oficinas físicas ni
 > colaboradores fijos; la propia geofísica atiende, cotiza y ejecuta. Volumen bajo de
@@ -18,7 +18,8 @@
 
 ## 2. Información que Brenda debe entregar (pendiente)
 
-- [ ] **Nombre comercial definitivo** y logotipo (si no hay, se usa logotipo tipográfico).
+- [x] **Nombre comercial:** NUSCAA-Geoservicios (empresa ya existente). Lema: "Porque cada proyecto es una nueva tierra".
+- [ ] **Logotipo** (si no hay, se usa logotipo tipográfico).
 - [ ] **Correo de contacto** (Gmail) donde llegarán las cotizaciones.
 - [ ] **Número de WhatsApp** (con lada, formato 52XXXXXXXXXX).
 - [ ] **Zona de cobertura** (estados / regiones donde trabaja).
@@ -102,10 +103,24 @@ Obligatorio en México (LFPDPPP) al recabar datos personales en el formulario.
 | RNF-07 | Accesibilidad: contraste suficiente, textos alternativos en imágenes, navegación por teclado. |
 | RNF-08 | Idioma: español (México). |
 
-## 5. Identidad visual propuesta
+## 5. Identidad visual
 - Colores: azul petróleo profundo (confianza/técnica) + naranja terracota (tierra/campo) + neutros arena.
-- Tipografía: *Manrope* (títulos) e *Inter* (texto).
-- Imágenes: generadas con IA como **provisionales**; reemplazar por fotos reales en cuanto existan.
+- Tipografía: *Sora* (títulos) e *Inter* (texto).
+- Imágenes: fotografías reales de trabajo geofísico tomadas de bancos con licencia libre
+  (Wikimedia Commons y Flickr vía Openverse), con créditos en `creditos.html`.
+  Reemplazar gradualmente por fotos propias de proyectos.
+- Animaciones: aparición al hacer scroll, contadores, cinta de servicios, parallax del hero,
+  onda sísmica dibujada, hover en tarjetas. Se desactivan si el usuario tiene
+  "reducir movimiento" activado.
+
+## 5b. Estructura del sitio (multipágina)
+| Página | Para qué sirve al cliente |
+|--------|---------------------------|
+| Inicio | Entender en 10 segundos qué hace la empresa y a dónde ir |
+| Servicios | Comparar los 18 estudios: qué es, profundidad, aplicaciones, entregable |
+| Nosotros | Saber quién hará el trabajo y cómo trabaja |
+| Preguntas | Resolver dudas de costo, tiempo e informe antes de escribir |
+| Cotizar | Enviar la solicitud por correo o WhatsApp |
 
 ## 6. Siguientes pasos (fase 2)
 1. Registrar dominio `.com.mx` y conectarlo a GitHub Pages.

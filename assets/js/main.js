@@ -1,25 +1,17 @@
+/*
+ * Comportamiento común: navegación, animaciones al hacer scroll, contadores,
+ * render de servicios/sectores y formulario de cotización.
+ */
 (function () {
   const SITE = window.SITE;
-  const CATS = window.CATEGORIAS;
-  const SERV = window.SERVICIOS;
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  const waLink = (text) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Datos de contacto desde config.js
-  $$("[data-site]").forEach((el) => { el.textContent = SITE[el.dataset.site] || el.textContent; });
-  $$("[data-site-mail]").forEach((el) => { el.href = `mailto:${SITE.email}`; el.textContent = SITE.email; });
-  $$("[data-wa]").forEach((el) => {
-    el.href = waLink(el.dataset.wa);
-    el.target = "_blank";
-    el.rel = "noopener";
-  });
-  $("#year").textContent = new Date().getFullYear();
-
-  // Navegación
+  /* ---------- Navegación ---------- */
   const nav = $("#nav");
-  const toggle = $(".nav__toggle");
-  const onScroll = () => nav.classList.toggle("is-solid", window.scrollY > 40);
+  const toggle = $(".nav__toggle", nav);
+  const onScroll = () => nav.classList.toggle("is-solid", window.scrollY > 24);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
   toggle.addEventListener("click", () => {
@@ -31,64 +23,136 @@
     toggle.setAttribute("aria-expanded", false);
   }));
 
-  // Servicios: pestañas por categoría
-  const tabs = $("#tabs");
-  const cards = $("#cards");
-  CATS.forEach((c, i) => {
-    const n = SERV.filter((s) => s.cat === c.id).length;
-    const b = document.createElement("button");
-    b.className = "tab";
-    b.role = "tab";
-    b.dataset.cat = c.id;
-    b.innerHTML = `${c.nombre}<small>${n}</small>`;
-    b.setAttribute("aria-selected", i === 0);
-    b.addEventListener("click", () => showCat(c.id));
-    tabs.appendChild(b);
-  });
+  /* ---------- Aparición al hacer scroll ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-inview");
+      if (e.target.hasAttribute("data-count")) runCounter(e.target);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
+  const observeAll = () => {
+    // Los hijos de .stagger se observan uno por uno (en móvil el contenedor puede ser más alto que la pantalla)
+    $$(".stagger").forEach((g) => $$(":scope > *", g).forEach((child, i) => { child.style.setProperty("--d", `${(i % 6) * 90}ms`); }));
+    $$("[data-reveal], .stagger > *, [data-count], .wave-wrap").forEach((el) => {
+      if (reduce) { el.classList.add("is-inview"); if (el.hasAttribute("data-count")) el.textContent = el.dataset.count; }
+      else io.observe(el);
+    });
+  };
 
-  function showCat(id) {
-    const c = CATS.find((x) => x.id === id);
-    $$(".tab", tabs).forEach((t) => t.setAttribute("aria-selected", t.dataset.cat === id));
-    $("#catImg").src = c.img;
-    $("#catImg").alt = `Estudio ${c.nombre.toLowerCase()} en campo`;
-    $("#catTitle").textContent = c.nombre;
-    $("#catDesc").textContent = c.resumen;
-    cards.innerHTML = "";
-    SERV.filter((s) => s.cat === id).forEach((s, i) => {
-      const art = document.createElement("article");
-      art.className = "card";
-      art.style.animationDelay = `${i * 40}ms`;
-      art.innerHTML = `
-        <span class="card__tag">${s.sigla}</span>
+  function runCounter(el) {
+    const end = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || "";
+    const dur = 1400, t0 = performance.now();
+    const tick = (t) => {
+      const p = Math.min(1, (t - t0) / dur);
+      const v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+      el.innerHTML = v + (suffix ? `<small>${suffix}</small>` : "");
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- Parallax suave del hero ---------- */
+  const heroImg = $(".hero__media img");
+  if (heroImg && !reduce) {
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) heroImg.style.translate = `0 ${y * 0.18}px`;
+    }, { passive: true });
+  }
+
+  /* ---------- Render: sectores ---------- */
+  const sectors = $("#sectores-grid");
+  if (sectors) {
+    sectors.innerHTML = window.SECTORES.map((s) => `
+      <article class="sector">
+        <img class="sector__img" src="${s.img}" alt="" loading="lazy">
         <h3>${s.nombre}</h3>
         <p>${s.desc}</p>
+        <div class="sector__tags">${s.tags.map((t) => `<span>${t}</span>`).join("")}</div>
+      </article>`).join("");
+  }
+
+  /* ---------- Render: página de servicios ---------- */
+  const catsRoot = $("#catblocks");
+  if (catsRoot) {
+    const svcCard = (s) => `
+      <article class="svc">
+        <div class="svc__top">
+          <span class="svc__tag">${s.sigla}</span>
+          <span class="svc__depth"><b>${s.prof}</b>profundidad típica</span>
+        </div>
+        <h3>${s.nombre}</h3>
+        <p>${s.desc}</p>
+        <div class="svc__label">Aplicaciones</div>
         <ul>${s.usos.map((u) => `<li>${u}</li>`).join("")}</ul>
-        <button class="card__cta" type="button">Cotizar este estudio →</button>`;
-      $(".card__cta", art).addEventListener("click", () => pickService(s));
-      cards.appendChild(art);
-    });
+        <div class="svc__label">Entregable</div>
+        <p style="margin-bottom:18px">${s.entrega}</p>
+        <a class="link svc__cta" href="cotizar.html?estudio=${encodeURIComponent(s.sigla)}">Cotizar este estudio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>`;
+    catsRoot.innerHTML = window.CATEGORIAS.map((c, i) => {
+      const list = window.SERVICIOS.filter((s) => s.cat === c.id);
+      return `
+      <section class="catblock" id="${c.id}">
+        <div class="wrap">
+          <div class="catblock__head">
+            <div data-reveal="left">
+              <span class="catblock__num">0${i + 1}</span>
+              <h2>${c.nombre}</h2>
+              <p class="lead">${c.resumen}</p>
+              <div class="catblock__for">${c.para.map((p) => `<span>${p}</span>`).join("")}</div>
+            </div>
+            <figure data-reveal="right"><img src="${c.img}" alt="${c.nombre}: trabajo de campo" loading="lazy"></figure>
+          </div>
+          <div class="grid services stagger">${list.map(svcCard).join("")}</div>
+        </div>
+      </section>`;
+    }).join("");
+
+    // Subnavegación pegajosa que resalta la categoría visible
+    const links = $$(".subnav a");
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === `#${e.target.id}`));
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    $$(".catblock").forEach((b) => spy.observe(b));
   }
-  showCat(CATS[0].id);
 
-  // Formulario: casillas de estudios
-  const chips = $("#chips");
-  SERV.forEach((s) => {
-    const label = document.createElement("label");
-    label.className = "chip";
-    label.title = s.nombre;
-    label.innerHTML = `<input type="checkbox" name="Estudios" value="${s.sigla} — ${s.nombre}"><span>${s.sigla}</span>`;
-    chips.appendChild(label);
-  });
+  observeAll();
+  // Red de seguridad: si por cualquier motivo el observador no dispara (pestaña en segundo
+  // plano, navegador antiguo), nada queda invisible después de unos segundos.
+  setTimeout(() => $$("[data-reveal], .stagger > *, [data-count], .wave-wrap").forEach((el) => {
+    if (el.classList.contains("is-inview")) return;
+    el.classList.add("is-inview");
+    if (el.hasAttribute("data-count")) runCounter(el);
+    io.unobserve(el);
+  }), 4000);
 
-  function pickService(s) {
-    const box = $$('input[name="Estudios"]', chips).find((i) => i.value.startsWith(s.sigla + " "));
-    if (box) box.checked = true;
-    $("#cotizar").scrollIntoView({ behavior: "smooth" });
-  }
-
-  // Envío del formulario
+  /* ---------- Formulario de cotización ---------- */
   const form = $("#form");
+  if (!form) return;
   const msg = $("#formMsg");
+  const chips = $("#chips");
+
+  // Casillas agrupadas por categoría
+  chips.innerHTML = window.CATEGORIAS.map((c) => `
+    <div>
+      <span class="chips__cat">${c.nombre}</span>
+      ${window.SERVICIOS.filter((s) => s.cat === c.id).map((s) => `
+        <label class="chip" title="${s.nombre}"><input type="checkbox" name="Estudios" value="${s.sigla} — ${s.nombre}"><span>${s.sigla}</span></label>`).join("")}
+    </div>`).join("") + `
+    <div><label class="chip"><input type="checkbox" name="Estudios" value="No sé, necesito asesoría"><span>No sé, necesito asesoría</span></label></div>`;
+
+  // Preselección desde ?estudio=SIGLA
+  const pre = new URLSearchParams(location.search).get("estudio");
+  if (pre) {
+    const box = $$('input[name="Estudios"]', chips).find((i) => i.value.startsWith(pre + " "));
+    if (box) { box.checked = true; setTimeout(() => form.scrollIntoView({ behavior: "smooth", block: "start" }), 300); }
+  }
 
   function collect() {
     const fd = new FormData(form);
@@ -121,10 +185,7 @@
     return bad;
   }
 
-  function setMsg(text, kind) {
-    msg.textContent = text;
-    msg.className = `form__msg ${kind || ""}`;
-  }
+  const setMsg = (text, kind) => { msg.textContent = text; msg.className = `form__msg ${kind || ""}`; };
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -132,7 +193,7 @@
     if (d.honey) return;
     const bad = validate(d);
     if (bad.length) {
-      setMsg(bad.includes("Privacidad") && bad.length === 1
+      setMsg(bad.length === 1 && bad[0] === "Privacidad"
         ? "Acepta el aviso de privacidad para continuar."
         : "Revisa los campos marcados y elige al menos un estudio.", "err");
       return;
@@ -171,11 +232,10 @@
     }
   });
 
-  // Alternativa: enviar los mismos datos por WhatsApp
   $("#sendWa").addEventListener("click", () => {
     const d = collect();
     const lines = [
-      `Hola, quiero cotizar un estudio geofísico.`,
+      "Hola, quiero cotizar un estudio geofísico.",
       d.nombre && `*Nombre:* ${d.nombre}`,
       d.empresa && `*Empresa:* ${d.empresa}`,
       d.estudios.length && `*Estudios:* ${d.estudios.join(", ")}`,
@@ -184,6 +244,6 @@
       d.extension && `*Extensión:* ${d.extension}`,
       d.descripcion && `*Proyecto:* ${d.descripcion}`
     ].filter(Boolean);
-    window.open(waLink(lines.join("\n")), "_blank", "noopener");
+    window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
   });
 })();

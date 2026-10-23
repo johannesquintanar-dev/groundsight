@@ -1,0 +1,83 @@
+[
+  {
+    "clave": "hero",
+    "archivo": "hero.jpg",
+    "titulo": "Geotechnical-Drilling",
+    "autor": "Dana Energy",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "fuente": "https://commons.wikimedia.org/w/index.php?curid=138721340"
+  },
+  {
+    "clave": "nosotros",
+    "archivo": "nosotros.jpg",
+    "titulo": "Noble Energy (seismic survey, Nevada)",
+    "autor": "BLM Nevada",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/55893585@N08/8164665345"
+  },
+  {
+    "clave": "pozo",
+    "archivo": "pozo.jpg",
+    "titulo": "Borehole drilling - geograph.org.uk - 7383973",
+    "autor": "TCExplorer",
+    "licencia": "CC BY-SA 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "fuente": "https://commons.wikimedia.org/wiki/File:Borehole_drilling_-_geograph.org.uk_-_7383973.jpg"
+  },
+  {
+    "clave": "batimetria",
+    "archivo": "batimetria.jpg",
+    "titulo": "New York Harbor (NOAA survey launch)",
+    "autor": "NOAA's National Ocean Service",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/40322276@N04/9264549061"
+  },
+  {
+    "clave": "obra",
+    "archivo": "obra.jpg",
+    "titulo": "2015.04 - Amsterdam, photo of a building site - An excavation at the Sarphatistraat for a new hotel",
+    "autor": "Fons Heijnsbroek (Amsterdam free photos)",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/104736837@N03/16912599170"
+  },
+  {
+    "clave": "agua",
+    "archivo": "agua.jpg",
+    "titulo": "Water found with a borehole drilling truck",
+    "autor": "Kradolferp",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "fuente": "https://commons.wikimedia.org/w/index.php?curid=149945942"
+  },
+  {
+    "clave": "mineria",
+    "archivo": "mineria.jpg",
+    "titulo": "Borax Boron Open Pit Mine, Boron, California",
+    "autor": "craigdietrich",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/57385426@N02/7547616046"
+  },
+  {
+    "clave": "gpr",
+    "archivo": "gpr.jpg",
+    "titulo": "Using ground-penetrating radar",
+    "autor": "The Official CTBTO Photostream",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://commons.wikimedia.org/w/index.php?curid=19306848"
+  },
+  {
+    "clave": "sismica",
+    "archivo": "sismica.jpg",
+    "titulo": "Noble Energy (seismic vibrator trucks, Nevada)",
+    "autor": "BLM Nevada",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/55893585@N08/8164699728"
+  }
+]

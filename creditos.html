@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Créditos de fotografías · NUSCAA-Geoservicios</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .cred-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+    .cred { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; font-size: .85rem; }
+    .cred img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+    .cred div { padding: 14px 16px; }
+    .cred b { display: block; font-family: var(--head); font-size: .92rem; margin-bottom: 4px; }
+    .cred a { color: var(--ink-2); }
+  </style>
+</head>
+<body data-page="creditos" data-nav="light">
+  <main id="contenido" class="section" style="padding-top:calc(var(--nav-h) + 56px)">
+    <div class="wrap">
+      <p class="kicker">Créditos</p>
+      <h1 style="font-size:clamp(2rem,4vw,3rem)">Fotografías utilizadas en este sitio</h1>
+      <p class="lead">Las fotografías de campo provienen de bancos de imágenes con licencia libre (Wikimedia Commons y Flickr vía Openverse). Agradecemos a sus autores. Serán reemplazadas gradualmente por fotografías propias de nuestros proyectos.</p>
+      <div class="cred-grid" id="creds"><p class="muted">Cargando créditos…</p></div>
+    </div>
+  </main>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/servicios.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (async () => {
+      const srcs = [["assets/img/stock/creditos-wikimedia.json", "assets/img/stock/"], ["assets/img/stock/ov/creditos-openverse.json", "assets/img/stock/ov/"]];
+      const items = [];
+      for (const [url, dir] of srcs) {
+        try { (await (await fetch(url)).json()).forEach((c) => items.push({ ...c, dir })); } catch (e) { /* archivo opcional */ }
+      }
+      const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+      document.getElementById("creds").innerHTML = items.length ? items.map((c) => `
+        <article class="cred">
+          <img src="${c.dir}${esc(c.archivo)}" alt="" loading="lazy">
+          <div>
+            <b>${esc(c.titulo)}</b>
+            <span>${esc(c.autor)} · <a href="${esc(c.licencia_url)}" target="_blank" rel="noopener">${esc(c.licencia)}</a></span><br>
+            <a href="${esc(c.fuente)}" target="_blank" rel="noopener">Ver original</a>
+          </div>
+        </article>`).join("") : "<p class='muted'>Sin créditos registrados.</p>";
+    })();
+  </script>
+</body>
+</html>

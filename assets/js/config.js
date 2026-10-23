@@ -5,7 +5,8 @@
  * activación a esta dirección: hay que abrirlo y confirmar una sola vez.
  */
 window.SITE = {
-  nombre: "BP Geofísica",
+  nombre: "NUSCAA-Geoservicios",
+  lema: "Porque cada proyecto es una nueva tierra",
   responsable: "Brenda Pamela",
   email: "cotizaciones@ejemplo.com",      // TODO: poner el Gmail de Brenda
   whatsapp: "520000000000",               // TODO: 52 + lada + número, sin espacios
