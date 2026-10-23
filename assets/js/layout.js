@@ -32,7 +32,9 @@
   const waMsg = "Hola, me interesa cotizar un estudio geofísico.";
   const waHref = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(waMsg)}`;
 
-  const LOGO = `<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="currentColor" opacity=".12"/><path d="M6 26c4-6 7-6 10-2s6 4 9-1 6-6 9-2" fill="none" stroke="#e4692e" stroke-width="3" stroke-linecap="round"/><path d="M6 18c4-5 7-5 10-2s6 3 9-1 6-5 9-1" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".7"/></svg>`;
+  // Símbolo "Sector" (branding/escudo/13-sector): contorno, onda y grieta en currentColor para
+  // que funcione sobre fondo claro u oscuro; estratos en arena y naranja.
+  const LOGO = `<svg viewBox="0 0 100 100" aria-hidden="true"><defs><clipPath id="logoClip"><path d="M50 98 L13 48 A58 58 0 0 1 87 48 Z"/></clipPath></defs><g clip-path="url(#logoClip)"><path d="M0 63 Q50 54 100 63 V73 Q50 64 0 73 Z" fill="#D8C7A6"/><path d="M0 75 Q50 66 100 75 V85 Q50 76 0 85 Z" fill="#E4692E"/><path d="M0 87 Q50 78 100 87 V110 H0 Z" fill="currentColor"/></g><path d="M50 98 L13 48 A58 58 0 0 1 87 48 Z M16 52 H38 L44 34 L50 60 L56 46 L60 52 H84 M50 60 L45 70 L54 79 L47 90 L50 97" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
   const WA = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>`;
 
   // Redes sociales: solo se muestran las que tengan URL en config.js

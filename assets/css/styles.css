@@ -88,7 +88,7 @@ p { margin: 0 0 1em; }
 .nav.is-solid { background: rgba(7, 26, 33, .9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,.06), 0 10px 30px -10px rgba(0,0,0,.4); color: #fff; }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; width: min(1200px, 100% - 40px); margin-inline: auto; }
 .logo { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font: 600 1.02rem var(--head); letter-spacing: -.01em; white-space: nowrap; }
-.logo svg { width: 40px; height: 40px; }
+.logo svg { width: 46px; height: 46px; }
 .logo b { color: var(--accent); font-weight: 800; }
 .logo small { display: block; font: 500 .68rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase; opacity: .65; margin-top: 3px; }
 .nav__menu { display: flex; align-items: center; gap: 4px; }
