@@ -24,6 +24,9 @@
   }));
 
   /* ---------- Aparición al hacer scroll ---------- */
+  // En celular los bloques se apilan: se revelan antes de entrar a la pantalla y sin escalonar,
+  // para que el contenido ya esté visible cuando el dedo llega a él.
+  const phone = window.matchMedia("(max-width: 860px)").matches;
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
@@ -31,10 +34,10 @@
       if (e.target.hasAttribute("data-count")) runCounter(e.target);
       io.unobserve(e.target);
     });
-  }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
+  }, { threshold: 0, rootMargin: phone ? "0px 0px 20% 0px" : "0px 0px -8% 0px" });
   const observeAll = () => {
     // Los hijos de .stagger se observan uno por uno (en móvil el contenedor puede ser más alto que la pantalla)
-    $$(".stagger").forEach((g) => $$(":scope > *", g).forEach((child, i) => { child.style.setProperty("--d", `${(i % 6) * 90}ms`); }));
+    $$(".stagger").forEach((g) => $$(":scope > *", g).forEach((child, i) => { child.style.setProperty("--d", phone ? "0ms" : `${(i % 6) * 70}ms`); }));
     $$("[data-reveal], .stagger > *, [data-count], .wave-wrap").forEach((el) => {
       if (reduce) { el.classList.add("is-inview"); if (el.hasAttribute("data-count")) el.textContent = el.dataset.count; }
       else io.observe(el);
@@ -68,7 +71,7 @@
   if (sectors) {
     sectors.innerHTML = window.SECTORES.map((s) => `
       <article class="sector">
-        <img class="sector__img" ${pic(s.img, "(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw")} alt="" loading="lazy">
+        <img class="sector__img" ${pic(s.img, "(max-width: 600px) 70vw, (max-width: 1024px) 50vw, 33vw")} alt="" loading="lazy" decoding="async">
         <h3>${s.nombre}</h3>
         <p>${s.desc}</p>
         <div class="sector__tags">${s.tags.map((t) => `<span>${t}</span>`).join("")}</div>

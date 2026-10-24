@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=202610241215">
+  <link rel="stylesheet" href="assets/css/styles.css?v=202610241640">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Groundsight Geoservicios","description":"Estudios geofísicos para ingeniería, geotecnia, agua subterránea y minería.","areaServed":"MX","url":"https://groundsight.pages.dev/"}
   </script>
@@ -28,7 +28,7 @@
   <main id="contenido">
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__media"><img src="assets/img/stock/ov/hero.jpg" srcset="assets/img/stock/ov/hero-640.webp 640w, assets/img/stock/ov/hero-1024.webp 1024w, assets/img/stock/ov/hero-1600.webp 1600w, assets/img/stock/ov/hero-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high"></div>
+      <div class="hero__media"><img src="assets/img/stock/ov/hero.jpg" srcset="assets/img/stock/ov/hero-480.webp 480w, assets/img/stock/ov/hero-800.webp 800w, assets/img/stock/ov/hero-1200.webp 1200w, assets/img/stock/ov/hero-1600.webp 1600w, assets/img/stock/ov/hero-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high"></div>
       <div class="wrap hero__content">
         <div>
           <h1 data-hero style="--d:120ms">Conoce el subsuelo antes de construir, perforar o invertir.</h1>
@@ -145,17 +145,17 @@
     </section>
   </main>
 
-  <script src="assets/js/config.js?v=202610241215"></script>
-  <script src="assets/js/servicios.js?v=202610241215"></script>
-  <script src="assets/js/imagenes.js?v=202610241215"></script>
-  <script src="assets/js/logo.js?v=202610241215"></script>
-  <script src="assets/js/layout.js?v=202610241215"></script>
-  <script src="assets/js/main.js?v=202610241215"></script>
+  <script src="assets/js/config.js?v=202610241640"></script>
+  <script src="assets/js/servicios.js?v=202610241640"></script>
+  <script src="assets/js/imagenes.js?v=202610241640"></script>
+  <script src="assets/js/logo.js?v=202610241640"></script>
+  <script src="assets/js/layout.js?v=202610241640"></script>
+  <script src="assets/js/main.js?v=202610241640"></script>
   <script>
     // Tarjetas de categorías y cinta de servicios
     document.getElementById("cats").innerHTML = CATEGORIAS.map((c, i) => `
       <a class="cat" href="servicios.html#${c.id}">
-        <img ${pic(c.img, "(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw")} alt="" loading="lazy">
+        <img ${pic(c.img, "(max-width: 600px) 70vw, (max-width: 1024px) 50vw, 33vw")} alt="" loading="lazy" decoding="async">
         <div class="cat__body">
           <h3>${c.nombre}</h3>
           <p>${c.resumen.split(". ")[0]}.</p>
