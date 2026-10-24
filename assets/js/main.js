@@ -99,7 +99,6 @@
         <div class="wrap">
           <div class="catblock__head">
             <div data-reveal="left">
-              <span class="catblock__num">0${i + 1}</span>
               <h2>${c.nombre}</h2>
               <p class="lead">${c.resumen}</p>
               <div class="catblock__for">${c.para.map((p) => `<span>${p}</span>`).join("")}</div>
