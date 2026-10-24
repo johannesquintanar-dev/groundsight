@@ -1,10 +1,5 @@
 /* Generado por _tools/resize.js: anchos WebP disponibles por fotografía. */
 window.IMG = {
- "assets/img/stock/batimetria.jpg": [
-  640,
-  1024,
-  1600
- ],
  "assets/img/stock/geoelectricos.jpg": [
   640,
   1024,
@@ -29,6 +24,12 @@ window.IMG = {
   640,
   1024,
   1600
+ ],
+ "assets/img/stock/infraestructura.jpg": [
+  640,
+  1024,
+  1600,
+  2400
  ],
  "assets/img/stock/ip.jpg": [
   640,

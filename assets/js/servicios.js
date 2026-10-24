@@ -115,6 +115,6 @@ window.SECTORES = [
   { img: "assets/img/stock/ov/agua.jpg", nombre: "Agua subterránea", desc: "Dónde perforar, a qué profundidad está el acuífero y qué calidad de agua esperar antes de invertir en un pozo.", tags: ["SEV", "TRE", "TEM"] },
   { img: "assets/img/stock/ov/sismica.jpg", nombre: "Diseño sísmico", desc: "Vs30, periodo del sitio y clasificación del suelo para cumplir reglamentos y normas de diseño sísmico.", tags: ["Vs30", "HVSR", "MASW", "SPAC"] },
   { img: "assets/img/stock/ov/mineria.jpg", nombre: "Minería y exploración", desc: "Cuerpos minerales, fallas y estructuras a escala de prospecto o regional.", tags: ["IP", "MAG", "GRAV"] },
-  { img: "assets/img/stock/batimetria.jpg", nombre: "Infraestructura y obra civil", desc: "Carreteras, presas, bordos y túneles: cavidades, rellenos, zonas débiles y azolve.", tags: ["TRE", "TRS", "Batimetría"] },
+  { img: "assets/img/stock/infraestructura.jpg", nombre: "Infraestructura y obra civil", desc: "Carreteras, presas, bordos y túneles: cavidades, rellenos, zonas débiles y azolve.", tags: ["TRE", "TRS", "Batimetría"] },
   { img: "assets/img/stock/gpr-concreto.jpg", nombre: "Estructuras de concreto", desc: "Varillas, recubrimientos, ductos embebidos y espesores antes de perforar, cortar o reforzar.", tags: ["GPR Concreto", "Pachómetro"] }
 ];
