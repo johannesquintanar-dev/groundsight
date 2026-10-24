@@ -54,6 +54,7 @@ const scripts = `  <script src="assets/js/config.js?v=${VER}"></script>
   <script src="assets/js/logo.js?v=${VER}"></script>
   <script src="assets/js/layout.js?v=${VER}"></script>
   <script src="assets/js/herramientas.js?v=${VER}"></script>
+  <script src="assets/js/rockie.js?v=${VER}"></script>
   <script src="assets/js/main.js?v=${VER}"></script>`;
 
 /* ---------- Página de cada estudio ---------- */

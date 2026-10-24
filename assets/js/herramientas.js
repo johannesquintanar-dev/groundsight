@@ -114,6 +114,32 @@
   // Métodos que funcionan con poco espacio (sin tendidos largos): se priorizan en zona urbana.
   const COMPACTOS = ["HVSR", "SPAC", "GPR", "GPR Concreto", "Pachómetro", "Down-Hole", "Cross-Hole", "PS Logging", "MAG", "MASW", "Vs30"];
 
+  // Lógica compartida por el asistente de la página y por Rockie (el chat):
+  // objetivo + profundidad + espacio → estudio principal, hasta dos complementos y su explicación.
+  function recomendar(obj, prof, urbano) {
+    const hasDepth = prof && prof.min != null;
+    const reaches = (s) => s.pmin == null || !hasDepth || (s.pmin <= prof.max && s.pmax >= prof.min);
+    let ok = obj.metodos.map(bySigla).filter(Boolean).filter(reaches);
+    let fuera = false;
+    if (!ok.length) {
+      // Ningún método habitual del objetivo llega a esa profundidad: se proponen los que sí llegan
+      fuera = true;
+      ok = SVC.filter((s) => s.pmin != null && reaches(s) && s.cat !== "magnetometria").slice(0, 3);
+    }
+    if (urbano) ok = [...ok].sort((a, b) => COMPACTOS.includes(b.sigla) - COMPACTOS.includes(a.sigla));
+    const [main, ...rest] = ok;
+    const extra = rest.slice(0, 2);
+    const elegidos = [main, ...extra].map((s) => s.sigla);
+    const necesitaLinea = ["TRE", "SEV", "IP", "TRS", "TEM"].includes(main.sigla);
+    const nota = (fuera ? "Los métodos habituales para este objetivo no llegan a esa profundidad; estos sí. Te confirmamos la mejor opción al revisar tu proyecto. " : "")
+      + obj.nota
+      + (urbano && necesitaLinea ? ` Ojo: ${main.sigla} necesita ${main.espacio.charAt(0).toLowerCase() + main.espacio.slice(1)}` : "");
+    const q = new URLSearchParams({ estudio: elegidos.join(","), objetivo: obj.id, prof: prof ? prof.id : "nose" });
+    const waText = `Hola, quiero cotizar un estudio geofísico.\n*Objetivo:* ${obj.nombre}\n*Profundidad:* ${prof ? prof.nombre : "No lo sé"}\n*Estudio sugerido:* ${elegidos.join(", ")}${urbano ? "\n*Sitio:* zona urbana / poco espacio" : ""}`;
+    return { main, extra, elegidos, fuera, nota, cotizar: `cotizar.html?${q}`, waText };
+  }
+  window.GS = { recomendar, alcance, ficha, bySigla };
+
   function asistente(root) {
     const objs = window.OBJETIVOS, profs = window.PROFUNDIDADES;
     const params = new URLSearchParams(location.search);
@@ -146,22 +172,7 @@
       }
       out.classList.remove("is-empty");
       const hasDepth = prof && prof.min != null;
-      const reaches = (s) => s.pmin == null || !hasDepth || (s.pmin <= prof.max && s.pmax >= prof.min);
-      let cand = obj.metodos.map(bySigla).filter(Boolean);
-      let fuera = false;
-      let ok = cand.filter(reaches);
-      if (!ok.length) {
-        // Ningún método habitual del objetivo llega a esa profundidad: se proponen los que sí llegan
-        fuera = true;
-        ok = SVC.filter((s) => s.pmin != null && reaches(s) && s.cat !== "magnetometria").slice(0, 3);
-      }
-      if (urbano) ok = [...ok].sort((a, b) => COMPACTOS.includes(b.sigla) - COMPACTOS.includes(a.sigla));
-      const [main, ...rest] = ok;
-      const extra = rest.slice(0, 2);
-      const elegidos = [main, ...extra].map((s) => s.sigla);
-      const necesitaLinea = ["TRE", "SEV", "IP", "TRS", "TEM"].includes(main.sigla);
-      const q = new URLSearchParams({ estudio: elegidos.join(","), objetivo: obj.id, prof: prof ? prof.id : "nose" });
-      const waText = `Hola, quiero cotizar un estudio geofísico.\n*Objetivo:* ${obj.nombre}\n*Profundidad:* ${prof ? prof.nombre : "No lo sé"}\n*Estudio sugerido:* ${elegidos.join(", ")}${urbano ? "\n*Sitio:* zona urbana / poco espacio" : ""}`;
+      const { main, extra, nota, cotizar, waText } = recomendar(obj, prof, urbano);
 
       out.innerHTML = `
         <div class="asis__main">
@@ -176,9 +187,9 @@
           <a class="link" href="${ficha(main)}">Ver ficha del estudio ${arrow}</a>
         </div>
         ${extra.length ? `<p class="asis__sub">Se complementa con</p><ul class="asis__extra">${extra.map((s) => `<li><a href="${ficha(s)}"><b>${s.sigla}</b><span>${s.nombre} · ${alcance(s)}</span></a></li>`).join("")}</ul>` : ""}
-        <p class="asis__note">${fuera ? "Los métodos habituales para este objetivo no llegan a esa profundidad; estos sí. Te confirmamos la mejor opción al revisar tu proyecto. " : ""}${obj.nota}${urbano && necesitaLinea ? ` Ojo: ${main.sigla} necesita ${main.espacio.charAt(0).toLowerCase() + main.espacio.slice(1)}` : ""}</p>
+        <p class="asis__note">${nota}</p>
         <div class="asis__actions">
-          <a class="btn btn--accent" href="cotizar.html?${q}">Cotizar con esta recomendación ${arrow}</a>
+          <a class="btn btn--accent" href="${cotizar}">Cotizar con esta recomendación ${arrow}</a>
           <a class="btn btn--wa" href="https://wa.me/${window.SITE.whatsapp}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener">Enviar por WhatsApp</a>
         </div>`;
       if (hasDepth) document.dispatchEvent(new CustomEvent("gs:depth", { detail: Math.sqrt(prof.min * prof.max) }));

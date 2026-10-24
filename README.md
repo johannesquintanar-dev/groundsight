@@ -84,3 +84,11 @@ npx serve .
 - Enlace para pedir reseña a un cliente después de un estudio: `https://groundsight.pages.dev/resenas?estudio=MASW`.
 - Cuando exista el Perfil de Negocio de Google, pega su enlace "Escribir una reseña" en
   `resenasGoogle` de `config.js` y aparecerá el botón.
+
+## Rockie (asistente del sitio)
+
+- Rockie es un chat guiado, sin inteligencia artificial: hace preguntas con botones, recomienda el
+  estudio con la misma lógica del asistente del inicio y contesta las preguntas frecuentes.
+- Lo que no entiende lo manda a WhatsApp con el mensaje del cliente ya escrito; nunca inventa datos.
+- Respuestas y palabras clave: `assets/js/rockie.js` (`FAQ` y `OBJ_KEYS`). El personaje está en
+  `branding/rockie/` (SVG y PNG) para usarlo en redes sociales.
