@@ -78,41 +78,10 @@
       </article>`).join("");
   }
 
-  /* ---------- Render: página de servicios ---------- */
-  const catsRoot = $("#catblocks");
-  if (catsRoot) {
-    const svcCard = (s) => `
-      <article class="svc">
-        <div class="svc__top">
-          <span class="svc__tag">${s.sigla}</span>
-          <span class="svc__depth"><b>${s.prof}</b>profundidad típica</span>
-        </div>
-        <h3>${s.nombre}</h3>
-        <p>${s.desc}</p>
-        <div class="svc__label">Aplicaciones</div>
-        <ul>${s.usos.map((u) => `<li>${u}</li>`).join("")}</ul>
-        <div class="svc__label">Entregable</div>
-        <p style="margin-bottom:18px">${s.entrega}</p>
-        <a class="link svc__cta" href="cotizar.html?estudio=${encodeURIComponent(s.sigla)}">Cotizar este estudio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </article>`;
-    catsRoot.innerHTML = window.CATEGORIAS.map((c, i) => {
-      const list = window.SERVICIOS.filter((s) => s.cat === c.id);
-      return `
-      <section class="catblock" id="${c.id}">
-        <div class="wrap">
-          <div class="catblock__head">
-            <div data-reveal="left">
-              <h2>${c.nombre}</h2>
-              <p class="lead">${c.resumen}</p>
-              <div class="catblock__for">${c.para.map((p) => `<span>${p}</span>`).join("")}</div>
-            </div>
-            <figure data-reveal="right"><img ${pic(c.img, "(max-width: 860px) 100vw, 50vw")} alt="${c.nombre}: trabajo de campo" loading="lazy"></figure>
-          </div>
-          <div class="grid services stagger">${list.map(svcCard).join("")}</div>
-        </div>
-      </section>`;
-    }).join("");
-
+  /* ---------- Página de servicios ---------- */
+  // Las tarjetas ya vienen en el HTML (las escribe tools/generar-estudios.js para que los
+  // buscadores las lean); aquí solo se resalta en la subnavegación la categoría visible.
+  if ($("#catblocks")) {
     // Subnavegación pegajosa que resalta la categoría visible
     const links = $$(".subnav a");
     const spy = new IntersectionObserver((entries) => {
@@ -149,12 +118,20 @@
     </div>`).join("") + `
     <div><label class="chip"><input type="checkbox" name="Estudios" value="No sé, necesito asesoría"><span>No sé, necesito asesoría</span></label></div>`;
 
-  // Preselección desde ?estudio=SIGLA
-  const pre = new URLSearchParams(location.search).get("estudio");
-  if (pre) {
-    const box = $$('input[name="Estudios"]', chips).find((i) => i.value.startsWith(pre + " "));
-    if (box) { box.checked = true; setTimeout(() => form.scrollIntoView({ behavior: "smooth", block: "start" }), 300); }
+  // Preselección desde ?estudio=TRE,MASW (fichas y asistente) y ?objetivo=&prof= (asistente)
+  const qs = new URLSearchParams(location.search);
+  const pre = (qs.get("estudio") || "").split(",").filter(Boolean);
+  let marcado = false;
+  pre.forEach((sig) => {
+    const box = $$('input[name="Estudios"]', chips).find((i) => i.value.startsWith(sig + " "));
+    if (box) { box.checked = true; marcado = true; }
+  });
+  const obj = (window.OBJETIVOS || []).find((o) => o.id === qs.get("objetivo"));
+  const prof = (window.PROFUNDIDADES || []).find((p) => p.id === qs.get("prof"));
+  if (obj && !form.elements.Descripcion.value) {
+    form.elements.Descripcion.value = `Objetivo: ${obj.nombre}.${prof ? ` Profundidad de interés: ${prof.nombre.toLowerCase()}.` : ""}\n`;
   }
+  if (marcado || obj) setTimeout(() => form.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
 
   function collect() {
     const fd = new FormData(form);

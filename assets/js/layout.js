@@ -75,7 +75,7 @@
         </div>
         <div>
           <h4>Sitio</h4>
-          <ul>${PAGES.map((p) => `<li><a href="${p.href}">${p.label}</a></li>`).join("")}<li><a href="cotizar.html">Cotizar</a></li></ul>
+          <ul>${PAGES.map((p) => `<li><a href="${p.href}">${p.label}</a></li>`).join("")}<li><a href="cotizar.html">Cotizar</a></li><li><a href="resenas.html">Dejar una reseña</a></li></ul>
         </div>
         <div>
           <h4>Servicios</h4>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://groundsight.pages.dev/resenas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reseñas de clientes · Groundsight Geoservicios</title>
+  <meta name="description" content="¿Fuiste cliente de Groundsight Geoservicios? Déjanos tu reseña del estudio geofísico que te realizamos y lee las opiniones de otros clientes.">
+  <meta name="theme-color" content="#071a21">
+  <link rel="icon" href="assets/img/favicon.svg?v=202610231419" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png?v=202610231419" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=202610242000">
+</head>
+<body data-page="resenas">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <main id="contenido">
+    <section class="page-hero">
+      <div class="page-hero__media"><img src="assets/img/stock/ov/obra.jpg" srcset="assets/img/stock/ov/obra-480.webp 480w, assets/img/stock/ov/obra-800.webp 800w, assets/img/stock/ov/obra-1200.webp 1200w, assets/img/stock/ov/obra-1600.webp 1600w, assets/img/stock/ov/obra-2048.webp 2048w" sizes="100vw" alt=""></div>
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Ruta"><a href="index.html">Inicio</a><span>/</span><span>Reseñas</span></nav>
+        <h1 data-hero style="--d:120ms">¿Fuiste nuestro cliente? Cuéntanos cómo te fue</h1>
+        <p class="lead" data-hero style="--d:220ms">Apóyanos dejando una reseña del estudio que te realizamos. Tu opinión ayuda a otros ingenieros y constructores a decidir, y a nosotros a mejorar en cada proyecto.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap contact-grid">
+        <div data-reveal="left">
+          <h2>Tu reseña, en dos minutos</h2>
+          <p class="lead">Califica el estudio, cuéntanos qué te pareció el trabajo de campo, el informe y la atención, y listo.</p>
+          <ul class="checks">
+            <li><b>Leemos todas.</b> Las buenas y las que nos dicen qué mejorar.</li>
+            <li><b>Solo publicamos con tu permiso.</b> Si no marcas la casilla, tu reseña se queda como comentario interno.</li>
+            <li><b>No editamos lo que escribes.</b> Publicamos tu reseña tal como la enviaste.</li>
+          </ul>
+          <div class="resenas__google" id="resenas-google" hidden>
+            <p>¿Tienes cuenta de Google? También puedes dejar tu reseña en nuestro perfil, donde la verán quienes nos busquen en Maps.</p>
+            <a class="btn btn--dark" href="#" target="_blank" rel="noopener">Reseñar en Google</a>
+          </div>
+        </div>
+
+        <form class="form" id="form-resena" novalidate data-reveal="right">
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <fieldset class="rate">
+            <legend>¿Cómo calificas el estudio?*</legend>
+            <div class="rate__stars">
+              <input type="radio" id="cal5" name="Calificacion" value="5"><label for="cal5" title="Excelente"><span class="sr">5 estrellas</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></label>
+              <input type="radio" id="cal4" name="Calificacion" value="4"><label for="cal4" title="Muy bueno"><span class="sr">4 estrellas</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></label>
+              <input type="radio" id="cal3" name="Calificacion" value="3"><label for="cal3" title="Bueno"><span class="sr">3 estrellas</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></label>
+              <input type="radio" id="cal2" name="Calificacion" value="2"><label for="cal2" title="Regular"><span class="sr">2 estrellas</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></label>
+              <input type="radio" id="cal1" name="Calificacion" value="1"><label for="cal1" title="Malo"><span class="sr">1 estrella</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></svg></label>
+            </div>
+            <span class="rate__txt" aria-live="polite"></span>
+          </fieldset>
+          <label>Estudio que te realizamos*<select name="Estudio" required></select></label>
+          <label>Tu reseña*<textarea name="Resena" rows="5" required placeholder="¿Cómo fue el trabajo de campo, el informe y la atención? ¿Te sirvió para tu proyecto?"></textarea></label>
+          <div class="form__row">
+            <label>Nombre*<input name="Nombre" required autocomplete="name"></label>
+            <label>Empresa<input name="Empresa" autocomplete="organization"></label>
+          </div>
+          <div class="form__row">
+            <label>Ciudad y estado del proyecto<input name="Ciudad" placeholder="Ej. Toluca, Edo. Méx."></label>
+            <label>Correo (no se publica)<input type="email" name="email" autocomplete="email"></label>
+          </div>
+          <label class="check"><input type="checkbox" name="Publicar" value="Sí"><span>Autorizo que publiquen mi reseña con mi nombre y empresa en este sitio.</span></label>
+          <div class="form__actions">
+            <button class="btn btn--accent" type="submit">Enviar reseña</button>
+            <a class="btn btn--wa" href="#" data-wa="Hola, quiero dejar una reseña del estudio que me realizaron.">Enviar por WhatsApp</a>
+          </div>
+          <p class="form__msg" id="resenaMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <h2>Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="resenas" id="resenas-lista"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/config.js?v=202610242000"></script>
+  <script src="assets/js/servicios.js?v=202610242000"></script>
+  <script src="assets/js/imagenes.js?v=202610242000"></script>
+  <script src="assets/js/logo.js?v=202610242000"></script>
+  <script src="assets/js/layout.js?v=202610242000"></script>
+  <script src="assets/js/resenas.js?v=202610242000"></script>
+  <script src="assets/js/main.js?v=202610242000"></script>
+</body>
+</html>

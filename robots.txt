@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /branding/
+
+Sitemap: https://groundsight.pages.dev/sitemap.xml

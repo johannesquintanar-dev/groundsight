@@ -49,7 +49,7 @@ Son fotos reales de trabajo geofísico con licencia libre (CC BY / CC BY-SA / do
 Los créditos se muestran en `creditos.html` y se leen de los archivos JSON de cada carpeta.
 Al sustituirlas por fotos propias, conserva el nombre del archivo y borra su entrada del JSON.
 
-Cada foto tiene versiones WebP en varios anchos (`nombre-640.webp`, `nombre-1024.webp`, …) que el
+Cada foto tiene versiones WebP en varios anchos (`nombre-480.webp`, `nombre-800.webp`, …; se regeneran con `node tools/resize.js --force`) que el
 navegador elige según el tamaño de pantalla (`srcset`); el JPG original queda como respaldo. Al
 agregar o cambiar una foto, vuelve a generar las versiones y el manifiesto `assets/js/imagenes.js`:
 
@@ -62,3 +62,25 @@ cd tools && npm i sharp && node resize.js
 ```bash
 npx serve .
 ```
+
+## Fichas por estudio, asistente y comparador
+
+- Los datos técnicos de cada estudio (alcance, días de campo, espacio necesario, límites) están en
+  `assets/js/servicios.js` (`FICHAS`), junto con los objetivos del asistente (`OBJETIVOS`).
+- Después de editar ese archivo, regenera las 18 páginas `estudio-*.html`, las tarjetas de
+  `servicios.html`, `sitemap.xml` y `robots.txt`:
+
+  ```bash
+  node tools/generar-estudios.js
+  ```
+
+- El asistente "¿Qué estudio necesito?", el comparador de profundidades y el selector de
+  aplicaciones están en `assets/js/herramientas.js`.
+
+## Reseñas
+
+- Los clientes las envían desde `resenas.html`; llegan al correo configurado en `config.js`.
+- Para publicar una reseña autorizada, cópiala en `window.RESENAS` dentro de `assets/js/resenas.js`.
+- Enlace para pedir reseña a un cliente después de un estudio: `https://groundsight.pages.dev/resenas?estudio=MASW`.
+- Cuando exista el Perfil de Negocio de Google, pega su enlace "Escribir una reseña" en
+  `resenasGoogle` de `config.js` y aparecerá el botón.

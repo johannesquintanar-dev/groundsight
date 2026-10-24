@@ -14,5 +14,8 @@ window.SITE = {
   cobertura: "Toda la República Mexicana",
   instagram: "https://www.instagram.com/NUSCAA_Geoservicios",
   facebook: "",                           // pendiente: pegar la URL cuando exista
-  linkedin: ""                            // pendiente: pegar la URL cuando exista
+  linkedin: "",                           // pendiente: pegar la URL cuando exista
+  // Enlace "Escribir una reseña" del Perfil de Negocio de Google (g.page/r/.../review).
+  // Mientras esté vacío, la página de reseñas solo muestra el formulario propio.
+  resenasGoogle: ""
 };
