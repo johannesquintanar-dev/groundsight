@@ -15,7 +15,7 @@
 
 ## En resumen
 
-Proyecto real para una cliente: un sitio de 25 páginas que explica 18 estudios geofísicos a personas que no son especialistas y las lleva a pedir una cotización.
+Proyecto real para una cliente: un sitio de 26 páginas que explica 18 estudios geofísicos a personas que no son especialistas y las lleva a pedir una cotización.
 
 - **Catálogo como datos:** los 18 estudios viven en un solo archivo JS y un script de Node genera sus páginas, el sitemap y las tarjetas.
 - **Asistente "¿Qué estudio necesito?"** y comparador de profundidades para orientar al cliente.
