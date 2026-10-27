@@ -1,4 +1,32 @@
-# Groundsight Geoservicios — sitio web
+<div align="center">
+
+<img src="assets/img/logo.svg" alt="Groundsight Geoservicios" width="320" />
+
+### Sitio web de una empresa mexicana de estudios geofísicos
+
+[![Ver sitio](https://img.shields.io/badge/Ver_sitio-en_vivo-e8692b?style=for-the-badge&logo=githubpages&logoColor=white)](https://johannesquintanar-dev.github.io/groundsight/)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+<img src=".github/preview.jpg" alt="Página de inicio de Groundsight Geoservicios" width="900" />
+
+</div>
+
+## En resumen
+
+Proyecto real para una cliente: un sitio de 25 páginas que explica 18 estudios geofísicos a personas que no son especialistas y las lleva a pedir una cotización.
+
+- **Catálogo como datos:** los 18 estudios viven en un solo archivo JS y un script de Node genera sus páginas, el sitemap y las tarjetas.
+- **Asistente "¿Qué estudio necesito?"** y comparador de profundidades para orientar al cliente.
+- **Rockie**, un chat guiado con botones (sin IA) que recomienda el estudio y, si no entiende, manda a WhatsApp con el mensaje ya escrito.
+- **Cotización por correo y WhatsApp** sin servidor (FormSubmit).
+- **Imágenes responsivas:** cada foto en WebP en cuatro anchos con `srcset`, generadas con `sharp`.
+- **Sin dependencias en el navegador** ni proceso de build; se publica gratis en GitHub Pages.
+
+---
+
+## Documentación técnica
 
 Sitio estático (HTML + CSS + JS, sin dependencias ni proceso de build) para la empresa de
 estudios geofísicos de Brenda Pamela. Se publica gratis con GitHub Pages.
